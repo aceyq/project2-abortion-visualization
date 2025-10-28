@@ -152,23 +152,32 @@
     </header>
 
     <main>
-      <h2>Proposition: [STATE PROPOSITION]</h2>
+      <h2>Proposition: "Restrictive abortion policies lead to lower abortion rates."</h2>
 
       <section>
         <h3>FOR the Proposition</h3>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img
+            src="prop1_against_scatter_improved.png"
+            alt="Scatterplot by state. X-axis: percent of counties without a known abortion clinic (2020). Y-axis: percent of residents who obtained abortion care out of state (2020). Points trend upward; selected states are labeled."
+            style="max-width:100%;height:auto;border-radius:12px;"
+            loading="lazy"
+          />
+          <figcaption>
+            States with fewer in-state clinics show <em>higher</em> out-of-state abortion travel in 2020. If cross-border care rises when local access is limited, in-state abortion counts can fall—supporting the proposition when measured narrowly as “abortions within the state.”
+          </figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
-
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li><strong>Encodings:</strong> position on a common scale (x = clinic scarcity proxy; y = out-of-state care share) with a simple dashed trend line; no legend/stat boxes to match team style.</li>
+          <li><strong>Color logic:</strong> monotone red scale encodes increasing clinic scarcity; white/black edges improve point contrast.</li>
+          <li><strong>Minimal annotation:</strong> a few state labels (e.g., Mississippi, Louisiana, California, Colorado) illustrate extremes without clutter.</li>
         </ul>
+
+        <p class="muted"><strong>Data limitations:</strong> single-year snapshot (2020) may not reflect post-2022 policy shifts; “% counties without a clinic” is a coarse access proxy (ignores capacity and telehealth); state-level aggregation hides urban–rural and border-county differences.</p>
+        <p class="muted"><strong>Potential confounders (to assess robustness):</strong> neighbor policy strictness and travel distance; income/insurance and Medicaid coverage; population density & clinic capacity; gestational limits/wait times; information and assistance networks.</p>
       </section>
 
       <section>
