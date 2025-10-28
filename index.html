@@ -207,20 +207,59 @@
         <p class="muted"><strong>Potential confounders (to assess robustness):</strong> Neighbor state policies and travel distances; income, insurance, and Medicaid coverage; population density and clinic capacity; gestational limits and wait times; and availability of nonprofit or telehealth support networks.</p>
 
       <section>
+<h3>FOR the Proposition</h3>
+
+        <figure>
+          <img
+            src="prop1_against_scatter_clean.png"
+            alt="Scatterplot by state. X-axis: percent of counties without a known abortion clinic (2020). Y-axis: percent of residents who obtained abortion care out of state (2020). Points trend upward; selected states are labeled."
+            style="max-width:100%;height:auto;border-radius:12px;"
+            loading="lazy"
+          />
+          <figcaption>
+            States with fewer in-state clinics show <em>higher</em> out-of-state abortion travel in 2020. If cross-border care rises when local access is limited, in-state abortion counts can fall—supporting the proposition when measured narrowly as “abortions within the state.”
+          </figcaption>
+        </figure>
+
+        <h4>Design Decisions and Rationale</h4>
+        <ul>
+          <li><strong>Decision 1 – Variable Selection (Score: 2)</strong><br>I paired “% of counties without a known clinic” with “% of residents traveling out of state for abortion care.” This transformation makes the argument persuasive by suggesting that clinic scarcity leads to fewer in-state abortions.</li>
+          <li><strong>Decision 2 – Trend Line (Score: 1.5)</strong><br>The dashed red trend line conveys a weak but visible positive correlation between limited access and higher out-of-state travel.</li>
+          <li><strong>Decision 3 – Color Encoding (Score: 1.5)</strong><br>The monotone red palette links intensity to clinic scarcity, making the relationship visually intuitive.</li>
+          <li><strong>Decision 4 – Selective Annotations (Score: 1)</strong><br>Highlighting states draws attention to contrasts that reinforce the argument.</li>
+          <li><strong>Decision 5 – Neutral Framing (Score: 2)</strong><br>Using “correlates” rather than “causes” maintains credibility and readability.</li>
+        </ul>
+
+        <p class="muted"><strong>Data limitations:</strong> Data are pre-Dobbs (2020) and ignore within-state geographic variation and telehealth access.</p>
+        <p class="muted"><strong>Potential confounders:</strong> Distance, border-state laws, Medicaid coverage, population density, clinic capacity.</p>
+      </section>
+
+      <!-- ================= AGAINST THE PROPOSITION ================= -->
+      <section>
         <h3>AGAINST the Proposition</h3>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img
+            src="Againstprop.png"
+            alt="Scatterplot showing weak relationship between clinic scarcity and abortion rates"
+            style="max-width:100%;height:auto;border-radius:12px;"
+          />
+          <figcaption>
+            Weak negative relationship suggests clinic scarcity does not reliably reduce abortion rates.
+          </figcaption>
         </figure>
 
-        <p>Design Decisions and Rationale:</p>
-
+        <p><strong>Design Decisions and Rationale:</strong></p>
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li><strong>Decision 1 – Variable Selection (Score: 2):</strong><br>I plotted clinic scarcity vs. the abortion rate per 1,000 women. The wide scatter weakens the causal narrative that restrictions reduce abortions.</li>
+          <li><strong>Decision 2 – Trend Line (Score: 1.5):</strong><br>A weak negative slope visually shows that restrictiveness explains little variation in abortion rates.</li>
+          <li><strong>Decision 3 – Color Encoding (Score: 1.5):</strong><br>The cool–warm gradient avoids implying “restriction = danger” and reduces emotional persuasion.</li>
+          <li><strong>Decision 4 – Selective Annotations (Score: 1):</strong><br>Examples like Missouri and South Dakota demonstrate counterpoints where high restrictiveness does not equal low rates.</li>
+          <li><strong>Decision 5 – Neutral Framing (Score: 2):</strong><br>Using “correlates” clarifies that causality is not implied.</li>
         </ul>
+
+        <p class="muted"><strong>Data limitations:</strong> Data are state-averaged and ignore clinic capacity, telehealth, and urban/rural differences.</p>
+        <p class="muted"><strong>Potential confounders:</strong> Cross-border travel, Medicaid restrictions, nonprofit support, telehealth availability, gestational limits.</p>
       </section>
 
       <section>
