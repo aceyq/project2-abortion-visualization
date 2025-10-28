@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load Excel
 excel_path = "GuttmacherInstituteAbortionDataByState.xlsx"
 df_raw = pd.read_excel(excel_path)
 
@@ -44,7 +43,7 @@ df = df_raw.rename(columns=rename_map)
 
 # Keep and clean
 use = ["state", "pct_counties_no_clinic_2020", "pct_traveled_outstate_2020"]
-missing = [c for c in use if c not in df.columns]  # CORRECTED THIS LINE
+missing = [c for c in use if c not in df.columns]
 if missing:
     raise ValueError(f"Missing columns: {missing}")
 
@@ -57,19 +56,15 @@ plot_df = df.dropna(subset=["pct_counties_no_clinic_2020", "pct_traveled_outstat
 x = plot_df["pct_counties_no_clinic_2020"].values
 y = plot_df["pct_traveled_outstate_2020"].values
 
-# Calculate correlation for annotation
-correlation = np.corrcoef(x, y)[0, 1]
-r_squared = correlation ** 2
-
-# Trend line
+# Trend line (no label -> no legend)
 m, b = np.polyfit(x, y, 1)
 x_line = np.linspace(np.nanmin(x), np.nanmax(x), 100)
 y_line = m * x_line + b
 
-# Create figure with better styling
+# Figure
 plt.figure(figsize=(10, 7))
 
-# Create scatter plot with color intensity based on x values
+# Scatter
 scatter = plt.scatter(
     x, y,
     c=x, cmap='Reds',
@@ -78,10 +73,10 @@ scatter = plt.scatter(
 )
 plt.colorbar(scatter, label='% Counties Without Clinic →')
 
-# Plot trend line
-plt.plot(x_line, y_line, 'r--', linewidth=2, label=f'Trend (R² = {r_squared:.3f})')
+# Trend line WITHOUT label (prevents legend)
+plt.plot(x_line, y_line, 'r--', linewidth=2)
 
-# Annotate selected states - choose states that tell a story
+# Annotate selected states
 highlight_states = [
     "Mississippi", "Louisiana", "Kentucky", "Missouri", "Wyoming",
     "Illinois", "Colorado", "California"
@@ -98,7 +93,7 @@ for s in highlight_states:
             bbox=dict(boxstyle="round,pad=0.3", facecolor='lightyellow', alpha=0.7)
         )
 
-# Improved axis labels & title
+# Labels & title
 plt.xlabel(
     "% of Counties Without an Abortion Clinic (2020)\n← More Accessible | More Restrictive →",
     fontsize=12
@@ -112,24 +107,11 @@ plt.title(
     fontsize=14, fontweight='bold', pad=20
 )
 
-# Add explanatory text box
-textstr = (
-    f"• Strong positive correlation (r = {correlation:.3f})\n"
-    f"• As clinic access decreases, out-of-state travel increases\n"
-    f"• Data supports argument that restrictions displace rather than prevent abortions"
-)
-props = dict(boxstyle='round', facecolor='wheat', alpha=0.8)
-plt.text(
-    0.02, 0.98, textstr, transform=plt.gca().transAxes,
-    fontsize=10, verticalalignment='top', bbox=props
-)
-
+# NO explanatory textbox, NO legend
 plt.grid(True, alpha=0.3)
-plt.legend()
 plt.tight_layout()
-plt.savefig("prop1_against_scatter_improved.png", dpi=200, bbox_inches='tight')
-plt.show()
 
-print(f"Correlation coefficient: {correlation:.3f}")
-print(f"R-squared: {r_squared:.3f}")
-print("Saved: prop1_against_scatter_improved.png")
+# Save clean exports (new filenames)
+plt.savefig("prop1_against_scatter_clean.svg", bbox_inches='tight')
+plt.savefig("prop1_against_scatter_clean.png", dpi=200, bbox_inches='tight')
+plt.show()
