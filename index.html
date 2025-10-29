@@ -162,95 +162,120 @@
 
         <figure>
           <img
-            src="prop1_against_scatter_clean.png"
-            alt="Scatterplot by state. X-axis: percent of counties without a known abortion clinic (2020). Y-axis: percent of residents who obtained abortion care out of state (2020). Points trend upward; selected states are labeled."
+            src="Againstprop.png"
+            alt="Scatterplot showing weak relationship between clinic scarcity and abortion rates"
             style="max-width:100%;height:auto;border-radius:12px;"
             loading="lazy"
           />
           <figcaption>
-            States with fewer in-state clinics show <em>higher</em> out-of-state abortion travel in 2020. If cross-border care rises when local access is limited, in-state abortion counts can fall—supporting the proposition when measured narrowly as “abortions within the state.”
+            Weak negative relationship suggests clinic scarcity correlates with lower abortion rates — supporting 
+            the claim that restrictive policies reduce in-state abortions.
           </figcaption>
         </figure>
-      
+
         <h4>Design Decisions and Rationale</h4>
         <ul>
           <li>
             <strong>Decision 1 – Variable Selection (Score: 2)</strong><br>
-            I paired “% of counties without a known clinic” with “% of residents traveling out of state for abortion care.”  
-            This transformation makes the argument persuasive by suggesting that clinic scarcity leads to fewer in-state abortions. It’s fully earnest because both variables are directly measurable and logically connected to the policy context.
+            We plotted clinic scarcity vs. abortion rate per 1,000 women. The weak negative slope visually supports 
+            the idea that restrictions reduce local abortion incidence.
           </li>
-      
+
           <li>
             <strong>Decision 2 – Trend Line (Score: 1.5)</strong><br>
-            The dashed red trend line conveys a weak but visible positive correlation between limited access and higher out-of-state travel.  
-            It’s slightly persuasive because it visually amplifies the relationship, but remains ethical since the slope and fit are accurate and not exaggerated.
+            The slight downward slope implies that more restrictive states see marginally fewer abortions, 
+            consistent with the proposition’s claim.
           </li>
-      
+
           <li>
             <strong>Decision 3 – Color Encoding (Score: 1.5)</strong><br>
-            The monotone red palette links intensity to clinic scarcity, making the relationship visually intuitive.  
-            The warm hue evokes restriction and urgency, reinforcing the argument’s emotional tone. It’s mostly earnest, but carries mild persuasive bias through color psychology.
+            A balanced cool–warm gradient avoids emotional overtones and maintains credibility while showing variation clearly.
           </li>
-      
+
           <li>
             <strong>Decision 4 – Selective Annotations (Score: 1)</strong><br>
-            Highlighting states such as Mississippi, Louisiana, California, and Colorado draws attention to ideological and geographic contrasts.  
-            This makes the visualization engaging and easier to interpret but introduces slight persuasion by spotlighting outliers that reinforce the narrative.
+            Highlighting Missouri and South Dakota helps emphasize states that exhibit strong policy–rate alignment.
           </li>
-      
+
           <li>
             <strong>Decision 5 – Neutral Framing (Score: 2)</strong><br>
-            The title and axis phrasing use neutral wording—“correlates” rather than “causes”—and describe restrictiveness along a spectrum (“More Accessible | More Restrictive”).  
-            This maintains credibility and readability, ensuring that viewers understand the chart’s limits while still framing it persuasively.
+            The title emphasizes correlation, not causation, reinforcing analytical neutrality while supporting the proposition.
           </li>
         </ul>
-      
-        <p class="muted"><strong>Data limitations:</strong> The data reflect only 2020, before major post-Dobbs policy changes. “% of counties without a clinic” is a coarse proxy that ignores capacity, telehealth access, and within-state disparities. State-level aggregation hides urban–rural variation and border-county dynamics.</p>
-      
-        <p class="muted"><strong>Potential confounders (to assess robustness):</strong> Neighbor state policies and travel distances; income, insurance, and Medicaid coverage; population density and clinic capacity; gestational limits and wait times; and availability of nonprofit or telehealth support networks.</p>
 
-      <section>
+        <p class="muted">
+          <strong>Data limitations:</strong> Data are state-level and do not account for telehealth access, 
+          border travel, or population changes. Restrictiveness measures may miss local exceptions or enforcement gaps.
+        </p>
+
+        <p class="muted">
+          <strong>Potential confounders:</strong> Cross-border travel, differences in reporting standards, 
+          Medicaid and insurance coverage, socioeconomic factors, and access to private healthcare providers.
+        </p>
+      </section>
 
       <section>
         <h3>AGAINST the Proposition</h3>
 
         <figure>
           <img
-            src="Againstprop.png"
-            alt="Scatterplot showing weak relationship between clinic scarcity and abortion rates"
+            src="prop1_against_scatter_clean.png"
+            alt="Scatterplot by state. X-axis: percent of counties without a known abortion clinic (2020). Y-axis: percent of residents who obtained abortion care out of state (2020). Points trend upward; selected states are labeled."
             style="max-width:100%;height:auto;border-radius:12px;"
+            loading="lazy"
           />
           <figcaption>
-            Weak negative relationship suggests clinic scarcity does not reliably reduce abortion rates.
+            States with fewer in-state clinics show <em>higher</em> out-of-state abortion travel in 2020. 
+            This pattern contradicts the claim that restrictive policies lower abortion rates; instead, it 
+            suggests restrictions displace abortion care to neighboring states.
           </figcaption>
         </figure>
 
-        <p><strong>Design Decisions and Rationale:</strong></p>
+        <h4>Design Decisions and Rationale</h4>
         <ul>
-          <li><strong>Decision 1 – Variable Selection (Score: 2):</strong><br>We plotted clinic scarcity vs. the abortion rate per 1,000 women. The wide scatter weakens the causal narrative that restrictions reduce abortions.</li>
-          <li><strong>Decision 2 – Trend Line (Score: 1.5):</strong><br>A weak negative slope visually shows that restrictiveness explains little variation in abortion rates.</li>
-          <li><strong>Decision 3 – Color Encoding (Score: 1.5):</strong><br>The cool–warm gradient avoids implying “restriction = danger” and reduces emotional persuasion.</li>
-          <li><strong>Decision 4 – Selective Annotations (Score: 1):</strong><br>Examples like Missouri and South Dakota demonstrate counterpoints where high restrictiveness does not equal low rates.</li>
-          <li><strong>Decision 5 – Neutral Framing (Score: 2):</strong><br>Using “correlates” clarifies that causality is not implied.</li>
+          <li>
+            <strong>Decision 1 – Variable Selection (Score: 2)</strong><br>
+            I paired “% of counties without a known clinic” with “% of residents traveling out of state for abortion care.”  
+            This pairing challenges the proposition by showing how restrictions shift, rather than reduce, abortion access. 
+            It’s fully earnest because both metrics are transparent and directly relevant to the policy discussion.
+          </li>
+
+          <li>
+            <strong>Decision 2 – Trend Line (Score: 1.5)</strong><br>
+            The dashed red trend line conveys a positive relationship between restrictiveness and out-of-state travel, implying 
+            that policy limits drive displacement. This framing effectively argues against the idea that restrictions reduce total abortions.
+          </li>
+
+          <li>
+            <strong>Decision 3 – Color Encoding (Score: 1.5)</strong><br>
+            The monotone red scale visually reinforces restrictiveness, but is still readable and not overly dramatic. 
+            It’s persuasive but ethical, since it communicates intensity without exaggeration.
+          </li>
+
+          <li>
+            <strong>Decision 4 – Selective Annotations (Score: 1)</strong><br>
+            Annotating states like Mississippi, Louisiana, and California highlights real-world contrasts. 
+            This helps viewers contextualize the data while subtly directing attention to outliers supporting the argument.
+          </li>
+
+          <li>
+            <strong>Decision 5 – Neutral Framing (Score: 2)</strong><br>
+            Using “correlates” rather than “causes” keeps the framing factual and avoids overstating causation, 
+            maintaining credibility while still persuasive.
+          </li>
         </ul>
 
-        <p class="muted"><strong>Data limitations:</strong> Data are state-averaged and ignore clinic capacity, telehealth, and urban/rural differences.</p>
-        <p class="muted"><strong>Potential confounders:</strong> Cross-border travel, Medicaid restrictions, nonprofit support, telehealth availability, gestational limits.</p>
-      </section>
+        <p class="muted">
+          <strong>Data limitations:</strong> The data reflect only 2020, before major post-Dobbs policy changes. 
+          “% of counties without a clinic” is a coarse proxy that ignores capacity, telehealth access, and within-state disparities. 
+          State-level aggregation hides urban–rural variation and border-county effects.
+        </p>
 
-      <section>
-        <h2>Final Reflection</h2>
-
-        <p>first paragraph</p>
-        <p style="text-indent: 2em;">After completing this project, we define ethical analysis and visualization as being honest and making design choices that don’t misrepresent the dataset. 
-          Visualizations can be easily manipulated to create a false narrative and deceive the audience. Every design choice requires careful consideration about how 
-          the visualization will be interpreted. In this project, we used deceptive techniques to persuade both sides of the proposition, which helped us understand 
-          how easy it is to create unethical visualizations. Overall, ethical analysis and visualization means presenting the data in a responsible way that doesn’t 
-          mislead the audience. </p>
-        <p style="text-indent: 2em;">From our perspective, the bounds between “acceptable” persuasive choices and “misleading” ones is the manipulation of the data and the intent behind 
-          design choices. Acceptable persuasive choices involve data transformations or design choices that don’t misrepresent the data. Misleading persuasive choices 
-          involve omitting or altering certain data that changes the audience’s takeaway from the visualization. Each design choice can have a significant effect on what 
-          is being perceived. The line between acceptable and misleading may be unclear, but it ultimately comes down to the intent and utilization of the dataset. </p>
+        <p class="muted">
+          <strong>Potential confounders:</strong> Neighbor-state policies and travel distances; income, insurance, 
+          and Medicaid coverage; population density; gestational limits and wait times; and the presence of nonprofit or telehealth 
+          networks facilitating access.
+        </p>
       </section>
     </main>
   </body>
